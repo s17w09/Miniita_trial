@@ -1,0 +1,20 @@
+<%= form_with model: @user  do |form| %>
+  <%= form.label :name, "名前" %>
+  <%= form.text_area :name %>
+  <%= form.label :email, "メールアドレス" %>
+  <%= form.text_field :email %>
+  <%= form.label :password, "パスワード" %>
+  <%= form.password_field :password %>
+  <%= form.label :password_confirmation, "パスワード確認" %>
+  <%= form.password_field :password_confirmation %>
+
+  <!------利用規約・プライバシーポリシーへの同意---------->
+  <%= form.check_box :terms_of_service %>
+  <%= form.label :terms_of_service, "利用規約" %>
+  <br>
+  <%= form.check_box :privacy_policy %>
+  <%= form.label :privacy_policy, "プライバシーポリシー" %>
+  
+  <br>
+  <%= form.submit "登録"%>
+<% end %>

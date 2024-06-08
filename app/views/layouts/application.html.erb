@@ -12,12 +12,15 @@
 
   <body>
 
+<!---ここからbeforeログインヘッダー---------------->
   <header>
   <aside>
-    <p>新規登録</p>
+    <%= link_to '新規登録', new_user_path %>
     <p>ログイン</p>
   </aside>
 </header>
+<!------------------->
+
 
     <%= yield %>
   </body>
