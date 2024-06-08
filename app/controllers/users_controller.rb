@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render :new
-      flash[:notice] = '新規登録に失敗しました'
     end
   end
 
