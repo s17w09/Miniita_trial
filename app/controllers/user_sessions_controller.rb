@@ -11,7 +11,12 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to articles_path
     else
-      redirect_to root_path
+      render :new
     end
+  end
+
+  def destroy
+    logout
+    redirect_to root_path, status: :see_other
   end
 end
