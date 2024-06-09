@@ -1,0 +1,9 @@
+<%= form_with url: login_path do |form| %>
+  <%= form.label :email, "メールアドレス" %>
+  <%= form.text_field :email, placeholder: 'メールアドレス' %>
+  <br>
+  <%= form.label :password, "パスワード"%>
+  <%= form.password_field :password, placeholder: 'パスワード' %>
+  <br>
+  <%= form.submit "ログイン" %>
+<% end %>
