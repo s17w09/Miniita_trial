@@ -11,13 +11,15 @@
   </head>
 
   <body>
-<!---ここからbeforeログインヘッダー---------------->
-<% if current_user %>
+  <%= render 'shared/flash_message' %>
+<!------ヘッダーの出し分け------------->
+  <% if current_user %>
     <%= render "shared/after_login_header" %>
   <% else %>
     <%= render "shared/before_login_header" %>
   <% end %>
-<!------------------->
-    <%= yield %>
+<!--------------------------------->
+  <%= yield %>
+
   </body>
 </html>
