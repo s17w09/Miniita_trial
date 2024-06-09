@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to root_path
+      redirect_to root_path, notice: '新規登録が完了しました'
     else
-      render :new
+      redirect_to new_user_path, notice: '新規登録が失敗しました'
     end
   end
 
