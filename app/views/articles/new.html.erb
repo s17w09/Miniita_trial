@@ -1,2 +1,15 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<%= form_with model: @article do |form| %>
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title, placeholder: 'タイトル' %>
+    <br>
+    <%= form.label :body, "本文" %>
+    <%= form.text_area :body, placeholder: '本文' %>
+    <br>
+    <%= form.submit "投稿する" %>
+  <% end %>
+
+
+  <p>HOW TO USE </p>
+  <p>テンプレート</p>
+  <p>Miniita Bot</>
+</div>  
