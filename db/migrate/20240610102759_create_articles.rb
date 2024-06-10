@@ -2,8 +2,7 @@ class CreateArticles < ActiveRecord::Migration[7.1]
   def change
     create_table :articles do |t|
       t.string :title, null: false
-      t.string :body, null: false
-      t.references :user, null: false, foreign_key: true
+      t.text :body, null: false
 
       t.timestamps
     end

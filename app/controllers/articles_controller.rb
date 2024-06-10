@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
 
   def index
+    @articles = Article.all
   end
 
   def new
@@ -9,13 +10,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-
-    if @article.save
-      redirect_to articles_path
-    else
-      render :new
-    end
+    @article = current_user.articles.build(article_params)
+    @article.save!
+    redirect_to articles_path
   end
 
   def show
