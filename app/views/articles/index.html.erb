@@ -1,1 +1,10 @@
-<%= @articles %>
+<% if @articles.present? %>
+  <% @articles.each do |article| %>
+    <div>
+      <h2><%= article.title %></h2>
+      <p><%= article.body %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>投稿がありません</p>
+<% end %>
