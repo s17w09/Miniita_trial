@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
