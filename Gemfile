@@ -31,6 +31,7 @@ gem "jbuilder"
 gem "sorcery"
 gem 'bootstrap', '~> 5.3.0'
 gem 'kaminari'
+gem 'ransack'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
