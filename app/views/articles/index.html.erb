@@ -1,8 +1,15 @@
-<% if @articles.present? %>
-  <% @articles.each do |article| %>
-    <%= link_to article.title, article_path(article) %>
+<div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+  <% if @articles.present? %>
+    <% @articles.each do |article| %>
+      <%= link_to article.title, article_path(article) %>
+      <%= l article.created_at, format: :short%>
+      <%= article.user.name %>
+    <% end %>
+  <% else %>
+    <p>投稿がありません</p>
   <% end %>
-    <%= paginate @articles %>
-<% else %>
-  <p>投稿がありません</p>
-<% end %>
+</div>
+<div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+  <%= paginate @articles %>
+</div>
+
