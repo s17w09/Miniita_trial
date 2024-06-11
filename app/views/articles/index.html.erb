@@ -1,1 +1,8 @@
-<p>ログイン成功画面</p>
+<% if @articles.present? %>
+  <% @articles.each do |article| %>
+    <%= link_to article.title, article_path(article) %>
+  <% end %>
+    <%= paginate @articles %>
+<% else %>
+  <p>投稿がありません</p>
+<% end %>

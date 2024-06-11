@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to articles_path, notice: 'ログインしました'
     else
-      render :new
+      redirect_to login_path, notice: 'ログインに失敗しました'
     end
   end
 
