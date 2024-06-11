@@ -24,11 +24,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = current_user.created_articles.find(params[:id])
+    @article = current_user.articles.find(params[:id])
   end
 
   def update
-    @article = current_user.created_articles.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     if @article.update(article_params)
       redirect_to articles_path
     end
