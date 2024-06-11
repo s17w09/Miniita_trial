@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
     
     if @article.save
-      redirect_to articles_path
+      redirect_to articles_path, notice: '投稿が完了しました'
     else
       render :new
     end
