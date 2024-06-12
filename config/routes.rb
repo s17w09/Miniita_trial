@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'staticpages#top'
   resources :users, only: [:new, :create]
   resources :articles
+  resources :templates, only: [:new]
   
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => "user_sessions#create"
