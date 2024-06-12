@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
 
   def index
-    @articles = Article.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @q = Article.ransack(params[:q])
+    @articles = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -21,6 +22,24 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+  end
+
+  def edit
+    @article = current_user.articles.find(params[:id])
+  end
+
+  def update
+    @article = current_user.articles.find(params[:id])
+    if @article.update(article_params)
+      redirect_to articles_path
+    end
+  end
+
+
+  def destroy
+    @article = current_user.articles.find(params[:id])
+    @article.destroy!
+    redirect_to articles_path
   end
 
   private

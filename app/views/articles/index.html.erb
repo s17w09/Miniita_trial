@@ -1,9 +1,15 @@
 <div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+  <%= search_form_for @q do |f| %>
+  <%= f.label :title, '検索' %>
+  <%= f.search_field :title_cont, placeholder: '検索欄' %>
+  <%= f.submit '検索'%>
+  <% end %>
+
   <% if @articles.present? %>
     <% @articles.each do |article| %>
-      <%= link_to article.title, article_path(article) %>
-      <%= l article.created_at, format: :short%>
-      <%= article.user.name %>
+      <%= link_to article.title, article_path(article) %>  
+      <%= l article.created_at, format: :short%>  
+      <%= article.user.name %> 
     <% end %>
   <% else %>
     <p>投稿がありません</p>

@@ -1,0 +1,13 @@
+<div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+<%= form_with model: @article do |form| %>
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title, placeholder: 'タイトル' %>
+    <br>
+    <%= form.label :body, "本文" %>
+    <%= form.text_area :body, placeholder: '本文' %>
+    <br>
+    <%= form.submit "投稿する" %>
+  <% end %>
+</div>
+
+
