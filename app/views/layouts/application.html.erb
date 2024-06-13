@@ -31,6 +31,7 @@
     <%= render "shared/before_login_header" %>
   <% end %>
 <!--------------------------------->
+  <%= turbo_frame_tag 'modal' %>
   <%= yield %>
 
   </body>
