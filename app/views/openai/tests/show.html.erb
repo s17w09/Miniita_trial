@@ -25,7 +25,7 @@
       return;
     }
 
-    const url = "<%= miniitabots_path('json') %>?user_input=" + formText.value;
+    const url = "<%= openai_tests_path('json') %>?user_input=" + formText.value;
     const postOptions = {
       headers: {
         'Accept': 'application/json',
