@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :articles
   resources :templates, only: [:new]
   
+  namespace :openai do
+    get 'tests/', to: 'tests#generate_text'
+    get 'tests/show', to: 'tests#show'
+  end
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => "user_sessions#create"
   delete 'logout' => 'user_sessions#destroy', :as => :logout
