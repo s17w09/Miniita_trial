@@ -32,6 +32,9 @@ gem "sorcery"
 gem 'kaminari'
 gem 'ransack'
 gem 'bootstrap', '~> 5.3.0'
+gem "ruby-openai"
+gem 'i18n'
+gem 'dotenv-rails'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
