@@ -1,4 +1,5 @@
-<div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+<div class= "w-5/6 mx-auto max-w-screen-xl">
+<div class="text-xl mt-20 flex justify-center">
 <%= form_with model: @article do |form| %>
     <%= form.label :title, "タイトル" %>
     <%= form.text_field :title, placeholder: 'タイトル' %>
@@ -7,7 +8,9 @@
     <%= form.text_area :body, placeholder: '本文' %>
     <br>
     <%= form.submit "投稿する" %>
+    <%= form.submit "下書きに保存する" %>
   <% end %>
+</div>
 </div>
 
 <div class= "w-5/6 mx-auto max-w-screen-xl">

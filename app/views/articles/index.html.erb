@@ -1,21 +1,26 @@
-<div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+<div class= "w-5/6 mx-auto max-w-screen-xl">
+<h1 class="text-xl mt-20 flex justify-center">
   <%= search_form_for @q do |f| %>
   <%= f.label :title, '検索' %>
   <%= f.search_field :title_cont, placeholder: '検索欄' %>
   <%= f.submit '検索'%>
   <% end %>
+</h1>
 
+<h2 class= "mt-10 flex justify-center grid grid-cols-1">
   <% if @articles.present? %>
     <% @articles.each do |article| %>
-      <%= link_to article.title, article_path(article) %>  
-      <%= article.created_at %>  
-      <%= article.user.name %> 
+      <h2 class="text-xl"><%= link_to article.title, article_path(article) %></h2> 
+      <h3 class="text-base"><%= article.created_at %></h3>
+      <h3 class="text-base"><%= article.user.name %></h3>
     <% end %>
   <% else %>
     <p>投稿がありません</p>
   <% end %>
+</h2>
+
 </div>
-<div class= "w-5/6 mx-auto max-w-screen-xl lg: flex justify-center">
+<div class= "w-5/6 mx-auto max-w-screen-xl mt-10 lg: flex justify-center">
   <%= paginate @articles %>
 </div>
 
