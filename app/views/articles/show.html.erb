@@ -7,5 +7,17 @@
   <%=link_to '編集', edit_article_path(@article)%>
   <%=link_to '削除', article_path(@article), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }%>
 <% end %>
+
+<% if @article.favorited?(current_user) %>
+ <%=link_to article_favorite_path(@article.id), data: { turbo_method: :delete } do %>
+   <i class="bi bi-arrow-through-heart-fill"></i>
+   <i class="bi bi-award-fill"></i>
+<% end %>
+<% else %>
+  <%= link_to article_favorites_path(@article.id), data: { turbo_method: :post } do %>
+    <i class="bi bi-arrow-through-heart"></i>
+    <i class="bi bi-award"></i>
+    <% end %>
+<% end %>
 </div>
 </div>
