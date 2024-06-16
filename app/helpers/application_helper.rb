@@ -22,7 +22,7 @@ module ApplicationHelper
       options = {
         autolink: true,  # URLやメールアドレスを自動的にリンクに変換、gyazo,通常のリンクテキスト対応
         space_after_headers: true, #見出し後の文字の大きさ変換。app/assets/stylesheets/redcarpet_custom.cssでCSS指定し、app/assets/config/manifest.jsとapp/views/layouts/application.html.erbで指定。
-        fenced_code_blocks: true,
+        fenced_code_blocks: true, #コードブロックで表示
         tables: true,
         hard_wrap: true, # 改行を <br> タグに変換
         lax_html_blocks: true, # HTMLブロックを緩やかに解析するオプション。区切り線は通常のredcarpetにも入っているが、マークダウンとHTMLの混在をスムーズに処理してくれる
