@@ -14,10 +14,13 @@
 </div>
 
 <div class= "w-5/6 mx-auto max-w-screen-xl">
-  <div class="absolute top-40 right-10">
-  <p>HOW TO USE </p>
-  <%=link_to 'テンプレート', new_template_path, data: { turbo_frame: 'modal' } %><br>
-  <%=link_to 'Miniita Bot', openai_tests_show_path %>
+  <div class="absolute top-40 right-10 grid grid-cols-1">
+    <%= render 'shared/markdown'%>
+    <%= render 'shared/miniitabot'%>
+    <%= render 'shared/error_template'%>
+    <%= render 'shared/skill_template'%>
+    <%= render 'shared/app_template'%>
+    <%= render 'shared/tips_template'%>
 </div> 
 </div>
 
