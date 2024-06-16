@@ -35,6 +35,8 @@ gem 'bootstrap', '~> 5.3.0'
 gem "ruby-openai"
 gem 'i18n'
 gem 'dotenv-rails'
+gem 'redcarpet'
+gem 'coderay'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
