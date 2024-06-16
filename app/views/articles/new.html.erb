@@ -1,16 +1,16 @@
 <div class= "w-5/6 mx-auto max-w-screen-xl">
-<div class="text-xl mt-20 flex justify-center">
+<div class="text-xl mt-20 flex justify-center h-screen w-full"> 
+<div class="w-full h-full flex flex-col">
 <%= form_with model: @article do |form| %>
     <%= form.label :title, "タイトル" %>
-    <%= form.text_field :title, placeholder: 'タイトル' %>
+    <%= form.text_field :title, placeholder: 'タイトル', class: 'textarea textarea-bordered mb-4 w-full'%>
     <br>
     <%= form.label :body, "本文" %>
-    <%= form.text_area :body, placeholder: '本文', class: "textarea textarea-bordered textarea-lg w-full max-w-xs" %>
-
+    <%= form.text_area :body, placeholder: '本文', class: "textarea textarea-bordered w-full mb-4 h-full" %>
     <%= form.submit "投稿する" %>
-    <%= form.submit "下書きに保存する" %>
-  <% end %>
-</div>
+  </div>
+    <% end %>
+  </div>
 </div>
 
 <div class= "w-5/6 mx-auto max-w-screen-xl">
