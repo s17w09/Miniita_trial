@@ -27,7 +27,7 @@ module ApplicationHelper
         hard_wrap: true, # 改行を <br> タグに変換
         lax_html_blocks: true, # HTMLブロックを緩やかに解析するオプション。区切り線は通常のredcarpetにも入っているが、マークダウンとHTMLの混在をスムーズに処理してくれる
         no_intra_emphasis: true, #語句の強調。「**強調**」で強調される。（**の後にスペースなし）
-        strikethrough: true # 打ち消し線（ストライクスルー）。「~~打ち消し線~~」で打ち消し線が入る
+        strikethrough: true, # 打ち消し線（ストライクスルー）。「~~打ち消し線~~」で打ち消し線が入る
       }
 
       extensions = {

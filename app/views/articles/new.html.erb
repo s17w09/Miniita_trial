@@ -17,6 +17,9 @@
   <div class="absolute top-40 right-10 grid grid-cols-1">
     <%= render 'shared/markdown'%>
     <%= render 'shared/miniitabot'%>
-  <%=link_to 'テンプレート', new_template_path, data: { turbo_frame: 'modal' } %>
+    <%= render 'shared/error_template'%>
+    <%= render 'shared/skill_template'%>
+    <%= render 'shared/app_template'%>
+    <%= render 'shared/tips_template'%>
 </div> 
 </div>
