@@ -14,9 +14,42 @@
 </div>
 
 <div class= "w-5/6 mx-auto max-w-screen-xl">
-  <div class="absolute top-40 right-10">
-  <p>HOW TO USE </p>
+  <div class="absolute top-40 right-10 grid grid-cols-1">
+<!-- You can open the modal using ID.showModal() method -->
+<button class="btn mb-5" onclick="my_modal_3.showModal()">マークダウン記法</button>
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 class="font-bold text-lg">HOW TO マークダウン記法（現在対応済み）</h3>
+    <p class="font-bold mb-2">①見出し語  「# 〇〇」</p>
+    <p class="text-sm mb-5">「# 例文」で文字が大きくなります。#のあとは半角空欄を空けてください。</p>
+
+    <p class="font-bold mb-2">②引用  「> 〇〇」</p>
+    <p class="text-sm mb-5">・「> 例文」で引用できます。</p>
+
+    <p class="font-bold mb-2">③コードブロック  「``` 〇〇 ```」</p>
+    <p class="text-sm mb-5">・「```例文```」でコードブロックを使用できます。※1行ずつ改行してください。</p>
+
+    <p class="font-bold mb-2">④URL  「 [〇〇](URL) 」</p>
+    <p class="text-sm mb-5">・「 [例文](https://miniita-trial.onrender.com) 」で引用できます。</p>
+
+    <p class="font-bold mb-2">⑤打ち消し線  「~~〇〇~~」</p>
+    <p class="text-sm mb-5">・「~~例文~~」で打ち消しできます。</p>
+
+    <p class="font-bold mb-2">⑥水平線  「***」</p>
+    <p class="text-sm mb-5">・「***」で線を挿入できます。</p>
+  </div>
+</dialog>
+
+
   <%=link_to 'テンプレート', new_template_path, data: { turbo_frame: 'modal' } %><br>
+  
+  
+  
+  
+  
   <%=link_to 'Miniita Bot', openai_tests_show_path %>
 </div> 
 </div>
