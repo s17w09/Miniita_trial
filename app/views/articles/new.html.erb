@@ -5,8 +5,8 @@
     <%= form.text_field :title, placeholder: 'タイトル' %>
     <br>
     <%= form.label :body, "本文" %>
-    <%= form.text_area :body, placeholder: '本文' %>
-    <br>
+    <%= form.text_area :body, placeholder: '本文', class: "textarea textarea-bordered textarea-lg w-full max-w-xs" %>
+
     <%= form.submit "投稿する" %>
     <%= form.submit "下書きに保存する" %>
   <% end %>

@@ -4,6 +4,13 @@
   <h3 class="text-2xl mt-10 flex justify-center"><%= @article.body %></h3>
 
 <div class= "flex justify-between mt-20 lg:justify-center lg:space-x-10">
+  <% if @article.created_by?(current_user)%>
+  <%=link_to '編集', edit_article_path(@article)%>
+  <%=link_to '削除', article_path(@article), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }%>
+<% end %>
+</div>
+
+<div class= "flex justify-between mt-20 lg:justify-center lg:space-x-10">
 <% if @article.favorited?(current_user, :like_first) %>
   <div class="tooltip" data-tip="参考になった">
     <%= link_to article_favorite_path(@article.id, type: :like_first), data: { turbo_method: :delete }, class: "unlike-button-1" do %>
