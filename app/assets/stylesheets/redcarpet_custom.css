@@ -1,0 +1,29 @@
+h1 {
+    font-size: 2em; /* 任意のサイズに調整 */
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  h2 {
+    font-size: 1.5em; /* 任意のサイズに調整 */
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  /* 他の見出しスタイルも追加可能 */
+  h3 {
+    font-size: 1.17em;
+  }
+  
+  h4 {
+    font-size: 1.12em;
+  }
+  
+  h5 {
+    font-size: 0.83em;
+  }
+  
+  h6 {
+    font-size: 0.75em;
+  }
+  

@@ -1,7 +1,7 @@
 <div class= "w-5/6 mx-auto max-w-screen-xl ">
   <h1 class="text-3xl mt-20 flex justify-center"><%= @article.title %></h1>
   <h2 class="text-base mt-10 flex justify-center"><%=@article.created_at %></h2>
-  <h3 class="text-2xl mt-10 flex justify-center"><%= markdown(@article.body).html_safe %></h3>
+  <h3 class="mt-10 flex justify-center"><%= markdown(@article.body).html_safe %></h3>
 
 
     <div class= "flex justify-between mt-20 lg:justify-center lg:space-x-10">
