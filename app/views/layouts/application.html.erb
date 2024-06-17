@@ -30,7 +30,6 @@
   </head>
 
   <body>
-  <%= render 'shared/flash_message' %>
 <!------ヘッダーの出し分け------------->
   <% if current_user %>
     <%= render "shared/after_login_header" %>
@@ -38,7 +37,7 @@
     <%= render "shared/before_login_header" %>
   <% end %>
 <!--------------------------------->
-  <%= turbo_frame_tag 'modal' %>
+  <%= render 'shared/flash_message' %>
   <%= yield %>
   <%=render 'shared/footer'%>
 
