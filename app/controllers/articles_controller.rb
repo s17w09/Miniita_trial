@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to articles_path, notice: '投稿が完了しました'
     else
-      render :new
+      flash.now[:danger] = '投稿に失敗しました'
     end
   end
 
