@@ -1,27 +1,75 @@
+<!-------------１つ目のいいねボタン------------->
+<div class="tooltip" data-tip="参考になった！">
 <% if @article.favorited?(current_user, :like_first) %>
-    <div class="tooltip" data-tip="hello">
       <%= link_to article_favorite_path(@article.id, type: :like_first), data: { turbo_method: :delete }, class: "unlike-button-1" do %>
         <i class="bi bi-arrow-through-heart-fill"></i>
         <%= @article.favorites.where(favorite_type: 'like_first').count %>
      <% end %>
-      </div>
   <% else %>
       <%= link_to article_favorites_path(@article.id, type: :like_first), data: { turbo_method: :post }, class: "like-button-1" do %>
         <i class="bi bi-arrow-through-heart"></i>
         <%= @article.favorites.where(favorite_type: 'like_first').count %>
       <% end %>
   <% end %>
-
+  </div>
+<!-------------１つ目のいいねボタン------------->
+<!-------------２つ目のいいねボタン------------->
+<div class="tooltip" data-tip="解決できた！">
   <% if @article.favorited?(current_user, :like_second) %>
-  <div class="tooltip" data-tip="hello">
      <%= link_to article_favorite_path(@article.id, type: :like_second), data: { turbo_method: :delete }, class: "unlike-button-2" do %>
-       <i class="bi bi-balloon-heart-fill"></i>
+       <i class="bi bi-award-fill"></i>
        <%= @article.favorites.where(favorite_type: 'like_second').count %>
      <% end %>
-         </div>
   <% else %>
      <%= link_to article_favorites_path(@article.id, type: :like_second), data: { turbo_method: :post }, class: "like-button-2" do %>
-       <i class="bi bi-balloon-heart"></i>
+       <i class="bi bi-award"></i>
        <%= @article.favorites.where(favorite_type: 'like_second').count %>
      <% end %>
 <% end %>
+</div>
+<!-------------２つ目のいいねボタン------------->
+<!-------------３つ目のいいねボタン------------->
+<div class="tooltip" data-tip="読みやすい！">
+<% if @article.favorited?(current_user, :like_third) %>
+     <%= link_to article_favorite_path(@article.id, type: :like_third), data: { turbo_method: :delete }, class: "unlike-button-2" do %>
+       <i class="bi bi-pencil-fill"></i>
+       <%= @article.favorites.where(favorite_type: 'like_third').count %>
+     <% end %>
+  <% else %>
+     <%= link_to article_favorites_path(@article.id, type: :like_third), data: { turbo_method: :post }, class: "like-button-2" do %>
+       <i class="bi bi-pencil"></i>
+       <%= @article.favorites.where(favorite_type: 'like_third').count %>
+     <% end %>
+<% end %>
+</div>
+<!-------------３つ目のいいねボタン------------->
+<!-------------４つ目のいいねボタン------------->
+<div class="tooltip" data-tip="より詳細を知りたいです！">
+<% if @article.favorited?(current_user, :like_forth) %>
+     <%= link_to article_favorite_path(@article.id, type: :like_forth), data: { turbo_method: :delete }, class: "unlike-button-2" do %>
+       <i class="bi bi-sun-fill"></i>
+       <%= @article.favorites.where(favorite_type: 'like_forth').count %>
+     <% end %>
+  <% else %>
+     <%= link_to article_favorites_path(@article.id, type: :like_forth), data: { turbo_method: :post }, class: "like-button-2" do %>
+       <i class="bi bi-sun"></i>
+       <%= @article.favorites.where(favorite_type: 'like_forth').count %>
+     <% end %>
+<% end %>
+</div>
+<!-------------４つ目のいいねボタン------------->
+<!-------------５つ目のいいねボタン------------->
+<div class="tooltip" data-tip="ありがとう！！">
+<% if @article.favorited?(current_user, :like_fifth) %>
+     <%= link_to article_favorite_path(@article.id, type: :like_fifth), data: { turbo_method: :delete }, class: "unlike-button-2" do %>
+       <i class="bi bi-person-hearts"></i>
+       <%= @article.favorites.where(favorite_type: 'like_fifth').count %>
+     <% end %>
+  <% else %>
+     <%= link_to article_favorites_path(@article.id, type: :like_fifth), data: { turbo_method: :post }, class: "like-button-2" do %>
+       <i class="bi bi-person-heart"></i>
+       <%= @article.favorites.where(favorite_type: 'like_fifth').count %>
+     <% end %>
+<% end %>
+</div>
+<!-------------５つ目のいいねボタン------------->

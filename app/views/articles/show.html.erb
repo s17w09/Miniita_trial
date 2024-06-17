@@ -1,16 +1,18 @@
-<div class= "w-5/6 mx-auto max-w-screen-xl ">
-  <h1 class="text-3xl mt-20 flex justify-center"><%= @article.title %></h1>
-  <h2 class="text-base mt-10 flex justify-center"><%=@article.created_at %></h2>
-  <h3 class="mt-10 flex justify-center"><%= markdown(@article.body).html_safe %></h3>
+<div class= "w-5/6 mx-auto max-w-screen-xl">
+  <div class="textarea textarea-bordered w-full mb-4 h-full mt-10" >
+    <h1 class="text-3xl mt-5 flex justify-center"><%= @article.title %></h1>
+    <h2 class="text-base mt-5 flex justify-center"><%=l @article.created_at, format: :long %></h2>
+    <h3 class="flex justify-center mt-10"><%= markdown(@article.body).html_safe %></h3>
+  </div>
 
-
-    <div class= "flex justify-between mt-20 lg:justify-center lg:space-x-10">
-      <% if @article.created_by?(current_user)%>
-        <%=link_to '編集', edit_article_path(@article)%>
-        <%=link_to '削除', article_path(@article), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }%>
-      <% end %>
-
-      <%= render 'shared/favorite' %>
-      <%= render 'shared/twitter' %>
-    </div>
+  <div class= "flex justify-center gap-4 mb-10 mt-10">
+    <% if @article.created_by?(current_user)%>
+      <%=link_to '編集', edit_article_path(@article), class: "rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"%>
+      <%=link_to '削除', article_path(@article), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }, class: "rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"%>
+    <% end %>
+  </div>
+  <div class= "flex justify-center gap-4 text-xl mb-10">
+    <%= render 'shared/favorite' %>
+    <%= render 'shared/twitter' %>
+  </div>
 </div>
