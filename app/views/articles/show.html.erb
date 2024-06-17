@@ -11,7 +11,7 @@
       <%=link_to '削除', article_path(@article), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }, class: "rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"%>
     <% end %>
   </div>
-  <div class= "gap-10 flex place-items-stretch text-xl">
+  <div class= "flex justify-center gap-4 text-xl mb-10">
     <%= render 'shared/favorite' %>
     <%= render 'shared/twitter' %>
   </div>
