@@ -33,7 +33,7 @@ gem 'kaminari'
 gem 'ransack'
 gem 'bootstrap', '~> 5.3.0'
 gem "ruby-openai"
-gem 'i18n'
+gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'redcarpet'
 gem 'coderay'
