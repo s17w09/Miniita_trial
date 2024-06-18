@@ -9,6 +9,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
+
+   <!-- OGP設定 -->
+    <meta name=”twitter:card” content=content="summary_large_image" />
+    <meta name=”twitter:site” content="@yanapaha" />
+    <meta name=”twitter:domain” content=”miniita-trial.onrender.com” />
+    <meta name=”twitter:title” content=”Miniitatrial” />
+    <meta name=”twitter:description” content=”技術記事をもっと身近に” />
+    <meta name="twitter:image" content="<%= asset_url('ogp.png') %>" />
+   <!-- OGP設定 -->
+
     <!--redcarpet： の読み込ませ-->
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_link_tag 'redcarpet_custom', media: 'all' %>
@@ -27,14 +37,6 @@
     </script>
     <!-- Google tag (gtag.js) -->
 
-    <!-- OGP設定 -->
-    <meta name=”twitter:card” content=content="summary_large_image" />
-    <meta name=”twitter:site” content="@yanapaha" />
-    <meta name=”twitter:domain” content=”miniita-trial.onrender.com” />
-    <meta name=”twitter:title” content=”Miniita trial” />
-    <meta name=”twitter:description” content=”技術記事をもっと身近に” />
-    <meta name="twitter:image" content="<%= asset_url('ogp.png') %>" />
-   <!-- OGP設定 -->
   </head>
 
   <body>
