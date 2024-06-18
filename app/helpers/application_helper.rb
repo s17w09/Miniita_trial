@@ -1,4 +1,13 @@
 module ApplicationHelper
+  def page_title(title = "")
+    base_ttitle = "Miniita_trial"
+    if title.empty?
+      base_ttitle
+    else
+       "#{title} | #{base_ttitle}"
+    end
+  end
+
     class HTMLwithCoderay < Redcarpet::Render::HTML
       def block_code(code, language)
         case language.to_s
@@ -38,4 +47,3 @@ module ApplicationHelper
       markdown.render(text)
     end
   end
-  
