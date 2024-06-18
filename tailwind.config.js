@@ -5,6 +5,14 @@ module.exports = {
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
   ],
-  plugins: [require("daisyui"), ('@tailwindcss/forms'),
+
+  theme: {
+    fontFamily: {
+      biz: ["BIZ UDGothic"],
+    },
+  },
+
+  plugins: [
+    require("daisyui"), ('@tailwindcss/forms'),
 ],
-}
+  }
