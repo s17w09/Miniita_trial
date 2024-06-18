@@ -1,59 +1,91 @@
 <% content_for :title, page_title("トップ") %>
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
+
+
+<% content_for :title, page_title("機能紹介") %>
 <div class="bg-white">
-  <div class="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
-    <div class="mx-auto max-w-2xl px-4 lg:max-w-none">
-      <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-        <div>
-          <h2 class="text-4xl font-bold tracking-tight text-gray-900">Miniita trial</h2>
-          <p class="mt-4 text-gray-500">EVERY DAY with technical Articles ー技術記事をもっと身近に</p>
-        </div>
-        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
-          <img src="https://tailwindui.com/img/ecommerce-images/incentives-07-hero.jpg" alt="" class="object-cover object-center">
-        </div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <div class="flex justify-center mt-10 mb-10">
+        <%= image_tag "white-logo.jpg", width: "300", height:"300"%>
       </div>
-      <div class="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-        <div class="sm:flex lg:block">
-          <div class="sm:flex-shrink-0">
-            <img class="h-16 w-16" src="https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg" alt="">
-          </div>
-          <div class="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-            <h3 class="text-sm font-medium text-gray-900">Free shipping</h3>
-            <p class="mt-2 text-sm text-gray-500">It&#039;s not actually free we just price it into the products. Someone&#039;s paying for it, and it&#039;s not us.</p>
-          </div>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">技術記事をもっと身近に</p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Miniita trialは、技術記事を書きたいけど書いたことがない/他の人から見られることに抵抗を感じている人向けのサイトです。
+      MIniita trialならではの機能を活用して、日々のアウトプットにご利用ください。</p>
+    </div>
+
+
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+      <!-----------マークダウン機能----------->
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <i class="mr-3 bi bi-gift"></i>
+              </svg>
+            </div>
+            マークダウン機能対応
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">技術記事を書く際、マークダウン記法の表記方法が分からず困ったことはありませんか？<br>
+            投稿・編集画面で、マークダウン記法がすぐにご確認いただけます。<br>
+            また、確認いただいた記法をそのままコピーし投稿することも可能です。</dd>
         </div>
-        <div class="sm:flex lg:block">
-          <div class="sm:flex-shrink-0">
-            <img class="h-16 w-16" src="https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg" alt="">
-          </div>
-          <div class="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-            <h3 class="text-sm font-medium text-gray-900">10-year warranty</h3>
-            <p class="mt-2 text-sm text-gray-500">If it breaks in the first 10 years we&#039;ll replace it. After that you&#039;re on your own though.</p>
-          </div>
+        <div class="sm:flex-shrink-0">
+             <a href="https://gyazo.com/d07d994c0bf7478d3432f0ee05782fa9"><img src="https://i.gyazo.com/d07d994c0bf7478d3432f0ee05782fa9.gif" alt="Image from Gyazo" width="1000"/></a>
         </div>
-        <div class="sm:flex lg:block">
-          <div class="sm:flex-shrink-0">
-            <img class="h-16 w-16" src="https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg" alt="">
-          </div>
-          <div class="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-            <h3 class="text-sm font-medium text-gray-900">Exchanges</h3>
-            <p class="mt-2 text-sm text-gray-500">If you don&#039;t like it, trade it to one of your friends for something of theirs. Don&#039;t send it here though.</p>
-          </div>
+        <!-----------マークダウン機能----------->
+      <!-----------テンプレート----------->
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <i class="mr-3 bi bi-book"></i>
+              </svg>
+            </div>
+            テンプレート機能
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">技術記事を書く際、「文章の構成をどうすればいいのか」と迷ったことはありませんか？
+          Miniita trialでは、ChatGPT-4oが作成した複数のテンプレートを用意しています。</dd>
         </div>
-      </div>
+        <div class="sm:flex-shrink-0">
+             <a href="https://gyazo.com/6e0afc2f013a37373434db90aa98b401"><img src="https://i.gyazo.com/6e0afc2f013a37373434db90aa98b401.gif" alt="Image from Gyazo" width="1000"/></a>
+        </div>
+        <!-----------テンプレート----------->
+        <!-----------Miniita Bot----------->
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <i class="mr-3 bi bi-android2"></i>
+              </svg>
+            </div>
+            Miniita Botによる支援
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">技術記事を書いている途中、「この内容で合っているか？」と不安になりますよね。Miniita trialでは、
+          気軽にその場で質問できるMiniita Botを設置しています。</dd>
+        </div>
+        <div class="sm:flex-shrink-0">
+             <a href="https://gyazo.com/80283af10903e1bffa93f33912413b51"><img src="https://i.gyazo.com/80283af10903e1bffa93f33912413b51.gif" alt="Image from Gyazo" width="1000"/></a>
+        </div>
+       <!-----------Miniita Bot----------->
+       <!-----------いいねぼたん----------->
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+           <i class="mr-3 bi bi-hand-thumbs-up"></i>
+              </svg>
+            </div>
+            複数のいいね機能
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">書き終わったものの、第三者からの反応が気になる...。MIniita trialでは複数のいいねボタンを用意しているので、
+          ユーザーからの反応の種類を確認することができ、モチベーション維持にも貢献します。</dd>
+        </div>
+        <div class="sm:flex-shrink-0">
+             <a href="https://gyazo.com/e6337cb18f45ddb74f6ca8e57339727f"><img src="https://i.gyazo.com/e6337cb18f45ddb74f6ca8e57339727f.gif" alt="Image from Gyazo" width="1000"/></a>
+        </div>
+        <!-----------いいねボタン----------->
+      </dl>
     </div>
   </div>
 </div>
