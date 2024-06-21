@@ -14,7 +14,7 @@ class Article < ApplicationRecord
     ["body","title"]
   end
 
-  def favorited?(user, type)
-    favorites.where(user_id: user.id, favorite_type: type).exists?
+  def favorited?(type)
+    favorites.where(favorite_type: type).exists?
   end
 end
