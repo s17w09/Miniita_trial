@@ -1,7 +1,7 @@
 <!-- You can open the modal using ID.showModal() method -->
 <button class="text-4xl" onclick="my_modal_2.showModal()"><i class="bi bi-chat-left-heart"></i></button>
 <dialog id="my_modal_2" class="modal">
-  <div class="modal-box">
+    <div class="modal-box mb-5 bg-white text-gray-600">
     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="my_modal_2.close()">✕</button>
     <h3 class="font-bold text-lg">Miniita Botで質問</h3>
     <p class="py-4">
@@ -11,7 +11,7 @@
           <div id="conversation" class="space-y-4 p-4 rounded overflow-y-auto">
           </div>
           <form id="text_form" class="flex items-center px-2 py-1 border-t border-gray-200 bg-white">
-            <input type="text" placeholder="質問内容を入力してください" id="user_input" class="flex-1 px-3 py-2 border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring">
+            <input type="text" placeholder="質問内容を入力してください" id="user_input" class="flex-1 px-3 py-2 border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring bg-white text-gray-600">
             <button id="button_post" class="px-4 py-2 bg-green-500 text-white rounded-md transition duration-300 ease-in-out hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-200 ml-2">送信</button>
           </form>
         </div>
