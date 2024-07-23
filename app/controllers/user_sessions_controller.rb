@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to articles_path, success: 'ログインしました'
     else
-      flash.now[:danger] = 'ログインに失敗しました'
+      flash[:error] = 'ログインに失敗しました'
     end
   end
 

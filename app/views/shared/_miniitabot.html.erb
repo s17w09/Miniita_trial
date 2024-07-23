@@ -1,7 +1,11 @@
-<!-- You can open the modal using ID.showModal() method -->
-<button class="text-4xl" onclick="my_modal_2.showModal()"><i class="bi bi-chat-left-heart"></i></button>
+<!-- モーダルのボタン -->
+<button class="text-4xl" onclick="my_modal_2.showModal()">
+  <i class="bi bi-chat-left-heart"></i>
+</button>
+
+<!-- モーダルの内容 -->
 <dialog id="my_modal_2" class="modal">
-    <div class="modal-box mb-5 bg-white text-gray-600">
+  <div class="modal-box mb-5 bg-white text-gray-600">
     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="my_modal_2.close()">✕</button>
     <h3 class="font-bold text-lg">Miniita Botで質問</h3>
     <p class="py-4">
@@ -10,7 +14,15 @@
         <div class="max-w-4xl w-full space-y-8 h-full">
           <div id="conversation" class="space-y-4 p-4 rounded overflow-y-auto">
           </div>
+
+          <!-- ドロップダウンメニューとテキスト入力 -->
           <form id="text_form" class="flex items-center px-2 py-1 border-t border-gray-200 bg-white">
+            <select id="dropdown" class="px-3 py-2 border rounded border-gray-300 bg-white text-gray-600 mr-2">
+              <option value="">選択してください</option>
+              <option value="どんな技術記事を書きたいのか、一言で入力してください">テンプレート</option>
+              <option value="MiniitaBotがあなたの記事内容を確認します。確認して欲しい箇所をペーストして">記事の内容</option>
+              <option value="その他">その他</option>
+            </select>
             <input type="text" placeholder="質問内容を入力してください" id="user_input" class="flex-1 px-3 py-2 border rounded border-gray-300 focus:border-blue-500 focus:outline-none focus:ring bg-white text-gray-600">
             <button id="button_post" class="px-4 py-2 bg-green-500 text-white rounded-md transition duration-300 ease-in-out hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-200 ml-2">送信</button>
           </form>
@@ -19,15 +31,22 @@
 
       <script>
         const button_post = document.getElementById('button_post');
+        const dropdown = document.getElementById('dropdown');
+        const userInput = document.getElementById('user_input');
+
+        // ドロップダウンメニューの選択が変更されたときの処理
+        dropdown.addEventListener('change', function() {
+          userInput.value = dropdown.value;
+        });
+
         button_post.addEventListener('click', function(event) {
           event.preventDefault();
 
-          const formText = document.querySelector("#user_input");
-          if (formText.value.trim() === "") {
+          if (userInput.value.trim() === "") {
             return;
           }
 
-          const url = "<%= openai_tests_path('json') %>?user_input=" + formText.value;
+          const url = "<%= openai_tests_path('json') %>?user_input=" + userInput.value;
           const postOptions = {
             headers: {
               'Accept': 'application/json',
@@ -41,16 +60,16 @@
             .then(item => {
               const list = document.getElementById("conversation");
 
-              <!----------ユーザーの質問------------------->
+              // ユーザーの質問
               const inputHTML = `
                 <div class="text-right flex items-end justify-end space-x-2">
                   <div class="chat-bubble inline-block bg-blue-100 px-4 py-2 rounded-lg max-w-3/4 break-words text-sky-950">
-                    <span>${formText.value}</span>
+                    <span>${userInput.value}</span>
                   </div>
                 </div>`;
               list.insertAdjacentHTML("beforeend", inputHTML);
 
-              <!----------MiniitaBotからの返事------------------->
+              // MiniitaBotからの返事
               const responseHTML = `
                 <div class="text-left flex items-start space-x-2">
                   <div class="chat-bubble inline-block bg-gray-100 px-4 py-2 rounded-lg max-w-3/4 break-words text-sky-950">
@@ -58,7 +77,7 @@
                   </div>
                 </div>`;
               list.insertAdjacentHTML("beforeend", responseHTML);
-              formText.value = "";
+              userInput.value = "";
               list.scrollTop = list.scrollHeight;
             })
             .catch(error => console.error('Error:', error));
